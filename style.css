@@ -1,0 +1,25 @@
+* {
+  margin: 0;
+  padding: 0;
+/* background-color: #050505;*/
+}
+
+#main {
+  height: 400px;
+}
+
+#color {
+  margin-left: 10%;
+  width: 50%;
+}
+
+#tool
+{
+  position:relative;
+  margin-top: 5px;
+}
+
+#canvas1{
+  position: relative;
+}
+  

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-colorpicker/3.2.0/css/bootstrap-colorpicker.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-colorpicker/3.2.0/js/bootstrap-colorpicker.js"></script>
+  <link rel="stylesheet" href="style.css" title="" type="" />
+  
+  
+</head>
+
+<body>
+  <canvas id="canvas1">
+  </canvas>
+  <div id="tool">
+    <div class="btn-group" role="group" aria-label="...">
+      <button type="button" class="btn btn-warning" onclick="setOptVal1()">Option 1</button>
+      <button type="button" class="btn btn-warning" onclick="setOptVal2()">Option 2</button>
+      <div class="btn-group" role="group">
+        <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Color
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu btn btn-warning">
+          <li><a href="#" class="btn btn-success" onclick="getColorRandomly()">Random Colour</a></li>
+          <li>
+            <div id="main" class="container btn btn-success"> Manual Colour
+              <input id="color" type="text" value="#269faf" class="form-control" />
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  
+  <script type="text/javascript" charset="utf-8" src="main.js">
+  </script>
+  <script type="text/javascript">
+    $(function() {
+      $('#color')
+        .colorpicker({})
+        .on('colorpickerChange', function(e) { //change the bacground color of the main when the color changes 
+        drawing=false;
+          new_color = e.color.toString()
+          $('#main').css('background-color', new_color)
+                  setManualColor(new_color);
+
+        })
+    });
+  </script>
+</body>
+
+</html>
